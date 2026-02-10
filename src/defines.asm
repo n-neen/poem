@@ -136,8 +136,9 @@
 !kstatesplash           =       #$0001
 !kstatenewgame          =       #$0002
 !kstategameplay         =       #$0003
-!kstatemessageboxsetup  =       #$0004
-!kstatemessagebox       =       #$0005
+!kstatesetupintro       =       #$0004
+!kstateintro            =       #$0005
+
 
 !kcontrollerpressedbuttonsarraylength       = #$0008
 
@@ -152,8 +153,8 @@
 !kscrollconstant3       =       #$0020/3
 !kscrollconstant4       =       #$0002/2
 
-!kscrollautoaccelmax    =       #$0300  ;how long to accelerate (frames)
-!kscrolltimer           =       #$0380  ;how long to wait before accelerating
+!kscrollautoaccelmax    =       #$0380  ;how long to accelerate (frames)
+!kscrolltimer           =       #$0300  ;how long to wait before accelerating
 
 
 !msgboxterminator       =       $9f

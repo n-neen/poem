@@ -44,11 +44,11 @@ org $c10000
     print "end $c1: ", pc
     
 org $c20000
-    ;
+    incsrc "./data/inc/c2.asm"
     print "end $c2: ", pc
     
 org $c30000
-    ;
+    incsrc "./data/inc/c3.asm"
     print "end $c3: ", pc
     
 org $c40000

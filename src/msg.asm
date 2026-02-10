@@ -98,7 +98,8 @@ msg: {
         phy
         
         pea.w !msgboxbankshort<<8       ;this is a hirom bank!
-        plb : plb                       ;no fast ram!
+        plb : plb                       ;no fast ram! (still get dp tho)
+        
         
         lda $0000,x
         and #$00ff
@@ -161,6 +162,7 @@ msg: {
     
     
     .scrollup: {
+        ;unused
         -
         jsl waitfornmi_long
         lda !bg4yscroll
@@ -178,6 +180,7 @@ msg: {
     
     
     .scrolldown: {
+        ;unused
         -
         jsl waitfornmi_long
         lda !bg4yscroll
@@ -201,7 +204,7 @@ msg: {
         ;while (not button) do:
             ;nothing i guess
             
-        ;jsr msg_scrollup
+        ;jsr msg_scrollup                   ;dont use these
         
         ldx #!kmessageboxtimermax
             
@@ -215,7 +218,7 @@ msg: {
         lda !controller
         beq --
         
-        ;jsr msg_scrolldown
+        ;jsr msg_scrolldown                 ;dont use these
         
         rts
     }

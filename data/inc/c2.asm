@@ -1,0 +1,7 @@
+incbin "./data/blast2.bin"
+incbin "./data/blast2.bin"
+incbin "./data/blast2.bin"
+incbin "./data/blast2.bin"
+incbin "./data/blast2.bin"
+incbin "./data/blast2.bin"
+incbin "./data/blast2.bin"

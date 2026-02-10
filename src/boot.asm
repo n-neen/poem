@@ -47,8 +47,6 @@ init: {
         stz $c000,x
         stz $d000,x
         stz $e000,x
-        stz $f000,x
-        stz $8000,x
         
         dex : dex
         bpl -
@@ -76,8 +74,6 @@ init: {
         stz $c000,x
         stz $d000,x
         stz $e000,x
-        stz $f000,x
-        stz $8000,x
         
         dex : dex
         bpl -
@@ -115,6 +111,7 @@ init: {
         sta $2100
         
         rep #$20
+        
     }
     
     jsr screenoff

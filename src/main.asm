@@ -16,8 +16,22 @@ main: {
         dw splash               ;1
         dw newgame              ;2
         dw gameplayvector       ;3
+        dw setupintro           ;4
+        dw intro                ;5
     }
 }
+
+
+intro: {
+    ldx.w #msgbox_scripts_1
+    jsl msg_runscript
+    
+    lda !kstatenewgame
+    sta !gamestate
+    
+    rts
+}
+
 
 colormathhandler: {
     lda !colormathmode
@@ -32,7 +46,7 @@ colormathhandler: {
     
     .statetable: {
         dw colormathhandler_titlescreen      ;$0
-        dw colormathhandler_messagebox       ;$1
+        dw colormathhandler_gameplay         ;$1
     }
     
     .titlescreen: {
@@ -51,14 +65,14 @@ colormathhandler: {
         rts
     }
     
-    .messagebox: {
-        lda #%00001000          ;main screen
+    .gameplay: {
+        lda #%00000011          ;main screen
         sta !mainscreen
     
-        lda #%00000111          ;sub screen
+        lda #%00001110          ;sub screen
         sta !subscreen
         
-        lda #%10110111          ;color math layers
+        lda #%10111111          ;color math layers
         sta !colormathlayers
         
         lda #%00000011          ;enable color math
@@ -70,28 +84,47 @@ colormathhandler: {
 
 
 newgame: {
-    ;setup for gameplay
-    
-    ;initialize player
-    ;load level
-    ;load enemies
     
     jsr waitfornmi
     jsr screenoff
     
-    sep #$20
-    lda.b #%00000010|(!bg4tilemapshifted<<2)        ;bg4 tilemap = 1x2
-    sta $210a
+    ;todo
     
-    stz !bg4yscroll
-    stz $2114
-    stz !bg4yscroll
-    stz $2114
+    lda #$0001
+    sta !colormathmode
+    
+    jsr waitfornmi
+    jsr screenon
+    
+    lda !kstategameplay
+    sta !gamestate
+    
+    rts
+}
+
+
+setupintro: {
+    jsr waitfornmi
+    jsr screenoff
+    
+    sep #$20
+    {
+        lda.b #%00000010|(!bg4tilemapshifted<<2)        ;bg4 tilemap = 1x2
+        sta $210a
+        
+        stz !bg4yscroll
+        stz $2114
+        stz !bg4yscroll
+        stz $2114
+    }
     rep #$20
     
     jsl msg_clear
     
-    lda !kstategameplay
+    jsr waitfornmi
+    jsr screenon
+    
+    lda !kstateintro
     sta !gamestate
     
     rts
@@ -124,7 +157,7 @@ splashsetup: {
     
     stz !scrollmode
     
-    lda !kstatenewgame              ;set next state (newgame)
+    lda !kstatesetupintro           ;set next state (intro setup)
     sta !startbuttondestmode        ;for when start button is pressed
     
     lda !kstatesplash
@@ -723,6 +756,11 @@ disablenmi: {
     stz $4200
     rep #$20
     rts
+    
+    .long: {
+        jsr disablenmi
+        rtl
+    }
 }
 
 
@@ -732,6 +770,11 @@ enablenmi: {
     sta $4200
     rep #$20
     rts
+    
+    .long: {
+        jsr enablenmi
+        rtl
+    }
 }
 
 
