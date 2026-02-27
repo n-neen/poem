@@ -71,7 +71,7 @@ msgbox: {
             db "THOUGHTFRUIT SPROUTS OUT        "
             db "                      NATURALLY,"
             db "         RIGHT THERE ON THE TREE"
-            db "THEY CAN BE PICKED OR EATEN     "
+            db "THEY CAN BE PICKED AND EATEN    "
             db "WHOLE, AS LONG AS THEY ARE GREEN"
             db !msgboxterminator
         }
