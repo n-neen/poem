@@ -156,7 +156,7 @@ C1:B000 test_pal
 80:843A waitforread
 
 [source files]
-0000 e9a71eb9 c:/users/keenan/desktop/newgame_repo/robotpast/src/msg_boxes.asm
+0000 b090eef3 c:/users/keenan/desktop/newgame_repo/robotpast/src/msg_boxes.asm
 0001 32481fa5 c:/users/keenan/desktop/newgame_repo/robotpast/src/boot.asm
 0002 d1fddfb2 c:/users/keenan/desktop/newgame_repo/robotpast/src/main.asm
 0003 7910e754 c:/users/keenan/desktop/newgame_repo/robotpast/src/loading.asm
@@ -164,10 +164,10 @@ C1:B000 test_pal
 0005 5d5fe2f3 c:/users/keenan/desktop/newgame_repo/robotpast/src/msg.asm
 0006 4526fc0d c:/users/keenan/desktop/newgame_repo/robotpast/data/inc/c1.asm
 0007 b0097b2d c:/users/keenan/desktop/newgame_repo/robotpast/data/inc/c2.asm
-0008 5e8e158e c:/users/keenan/desktop/newgame_repo/robotpast/robotpast.asm
+0008 70957c1e c:/users/keenan/desktop/newgame_repo/robotpast/poem.asm
 
 [rom checksum]
-91fd8266
+a74b997a
 
 [addr-to-line mapping]
 c0:0000 0000:00000009
@@ -1176,15 +1176,15 @@ c2:0300 0007:00000004
 c2:0400 0007:00000005
 c2:0500 0007:00000006
 c2:0600 0007:00000007
-80:ffc0 0008:00000051
-80:ffd5 0008:00000052
-80:ffd6 0008:00000053
-80:ffd7 0008:00000054
-80:ffd8 0008:00000055
-80:ffd9 0008:00000056
-80:ffda 0008:00000057
-80:ffdb 0008:00000058
-80:ffdc 0008:00000059
-80:ffde 0008:0000005a
-80:ffe0 0008:0000005f
-80:fff0 0008:00000062
+80:ffc0 0008:0000003a
+80:ffd5 0008:0000003b
+80:ffd6 0008:0000003c
+80:ffd7 0008:0000003d
+80:ffd8 0008:0000003e
+80:ffd9 0008:0000003f
+80:ffda 0008:00000040
+80:ffdb 0008:00000041
+80:ffdc 0008:00000042
+80:ffde 0008:00000043
+80:ffe0 0008:00000048
+80:fff0 0008:0000004b
